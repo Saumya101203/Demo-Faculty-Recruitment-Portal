@@ -4,7 +4,7 @@
 
 
 ### Overview:
-Welcome to the Faculty Recruitment Portal! This project, is a demonstration platform tailored specifically for the CS260 lab project. The portal streamlines the recruitment journey for academic institutions, offering a user-friendly interface and efficient processes.
+This project, developed by Saumya (2201AI35) and Ansh (2201AI07), is a demo faculty recruitment portal created for the CS260 lab project. The portal facilitates the recruitment process for academic institutions.
 
 ### Installation Steps:
 1. *Download XAMPP*: 
@@ -36,6 +36,8 @@ Welcome to the Faculty Recruitment Portal! This project, is a demonstration plat
 ### Contributors:
 - Saumya Pratap Singh (2201AI35)
   - Email: [2201ai35_saumya@iitp.ac.in](mailto:2201ai35_saumya@iitp.ac.in)
+- Ansh Phutela (2201AI07)
+  - Email: [2201ai07_ansh@iitp.ac.in](mailto:2201ai07_ansh@iitp.ac.in)
 
 ### Contact:
 For any inquiries or issues, please contact me via my email addresses.
