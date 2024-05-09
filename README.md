@@ -1,5 +1,7 @@
-**DBMS Project In - Pro.zip**
 ## Faculty Recruitment Portal - CS260 Lab Project
+
+## Important Note - Keep all the files in a single folder along with unzipped TCPDF.zip
+
 
 ### Overview:
 Welcome to the Faculty Recruitment Portal! This project, is a demonstration platform tailored specifically for the CS260 lab project. The portal streamlines the recruitment journey for academic institutions, offering a user-friendly interface and efficient processes.
