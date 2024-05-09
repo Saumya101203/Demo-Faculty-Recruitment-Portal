@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+    body{
+        background-image: url(./iitp.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .first-row{
+       
+        padding: 3px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .button1{
+        margin:5px;
+        float: right;
+    }
+    .button2{
+        margin:5px;
+        float: right;
+    }
+
+    .Row1{
+        width: 90%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        text-align: center;
+        padding:20px;
+    }
+
+    .grid-container1 {
+    display: grid;
+    
+    grid-gap: 10px;
+    }
+
+    .grid-row1 {
+        display: flex;
+    }
+
+    .grid-item1 {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .grid-item-full1 {
+        justify-content: left;
+        flex: 2;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        width: 50%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="date"] {
+    width: 50%; 
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+input[type="date"]:focus {
+    border-color: #007bff; 
+    outline: none; 
+}
+
+
+.dropdown {
+    width: 50%; 
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #978888;
+}
+
+
+.dropdown::after {
+    content: '\25BC'; 
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; 
+}
+
+
+.dropdown option {
+    background-color: #fff;
+    color: #333;
+}
+
+
+.dropdown:focus,
+.dropdown:hover {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    outline: none; 
+}
+
+.dotted-line {
+    border-bottom: 1px dotted #000; 
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+ 
+    grid-gap: 15px;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.grid-item {
+    flex: 1;
+    margin-right: 10px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.upload-label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.upload-input {
+    
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.upload-input:hover {
+    background-color: #e0e0e0;
+}
+
+.address-label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.address-input {
+  
+    width: 50%;
+    height: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.address-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.save{
+    background-color: rgb(0, 255, 170);
+    border-width: 0px;
+    height: 40px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    float: right;
+}
+.save:hover{
+    background-color:green;
+}
+</style>
+
+<body>
+
+    <div>
+
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Indian_Institute_of_Technology%2C_Patna.svg/330px-Indian_Institute_of_Technology%2C_Patna.svg.png" style="padding-top: 5px; height: 120px; float: left;">
+
+        <h1 style="font-size: 50px; color: white;" >INDIAN INSTITUTE OF TECHNOLOGY PATNA</h1>
+        <h1 style="font-size: 50px; color: white;">भारतीय प्रौद्योगिकी संस्थान पटना</h1>
+
+            <div class="Row1">
+                
+                <div class="first-row">
+                    <a href="./login-page.html">
+                        <button class="button1">Logout</button>
+                    </a>
+                    <a href="./forget-password.html">
+                        <button class="button1">Change Password</button>
+                    </a>
+                    
+                </div>
+                <h2 id="userEmail">Welcome, loading...</h2>
+                <form method="POST" action="page1.php" enctype="multipart/form-data">
+                <div class="grid-container1">
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                       
+                            <select id="department" name="department" class="dropdown">
+                                <option value="">Department</option>
+                                <option value="Computer Science Dept">Computer Science Dept</option>
+                                <option value="Electrical Dept">Electrical Dept</option>
+                                <option value="Mechanical Dept">Mechanical Dept</option>
+                                <option value="Chemical Dept">Chemical Dept</option>
+                                <option value="Civil Dept">Civil Dept</option>
+                                <option value="Metallurgy Dept">Metallurgy Dept</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                         
+                            <select id="post_applied_for" name="post_applied_for" class="dropdown">
+                                <option value="">Post Applied for</option>
+                                <option value="Professor">Professor</option>
+                                <option value="Associate Professor">Associate Professor</option>
+                                <option value="Assistant Professor Grade 1">Assistant Professor Grade 1</option>
+                                <option value="Assistant Professor Grade 2">Assistant Professor Grade 2</option>
+                            </select>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <div class="dotted-line"></div>
+    
+            <div class="Row1">
+    
+                <div>
+                    <p style="text-align: left; font-size: large;">Personal details: </p>
+                </div>
+    
+                <div class="grid-container">
+                    <div class="grid-row">
+                        <div class="grid-item">
+                        
+                            <input type="text" id="first_name" name="first_name" placeholder="First Name">
+                        </div>
+                        <div class="grid-item">
+                           
+                            <input type="text" id="middle_name" name="middle_name" placeholder="Middle Name">
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item">
+                       
+                            <input type="text" id="last_name" name="last_name" placeholder="Last Name">
+                        </div>
+                        <div class="grid-item">
+                        
+                            <select id="nationality" name="nationality" class="dropdown">
+                                <option value="">Nationality</option>
+                                <option value="Indian">Indian</option>
+                                <option value="American">American</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="Russian">Russian</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item">
+                          
+                            <select id="gender" name="gender" class="dropdown">
+                                <option value="">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+    
+                        </div>
+                        <div class="grid-item">
+                      
+                            <input type="date" id="date_of_birth" name="date_of_birth">
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item">
+                       
+                            <select id="id_proof" name="id_proof" class="dropdown">
+                                <option value="">ID Proof</option>
+                                <option value="Aadhar card">Aadhar card</option>
+                                <option value="PAN-CARD">PAN-CARD</option>
+                                <option value="Driving License">Driving License</option>
+                                <option value="Passport">Passport</option>
+                            </select>
+                        </div>
+                        <div class="grid-item">
+                         
+                            <input type="text" id="father_name" name="father_name" placeholder="Father's name">
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item">
+                          
+                            <select id="marital_status" name="marital_status" class="dropdown">
+                                <option value="">Marital Status</option>
+                                <option value="Married">Married</option>
+                                <option value="Un-married">Un-married</option>
+                            </select>
+    
+                        </div>
+                        <div class="grid-item">
+                            
+                           <select id="category" name="category" class="dropdown">
+                                <option value="">Category</option>
+                                <option value="UR">UR</option>
+                                <option value="PR">PR</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="grid-row">
+                        <div class="grid-item">
+                            <label for="">Upload ID Proof</label>
+                            <input type="file" id="id_proof_upload" name="id_proof_upload" accept="image/*" class="upload-input">
+    
+                        </div>
+                        <div class="grid-item">
+                           <label>Upload your Image</label>
+                           <input type="file" id="image_upload" name="image_upload" accept="image/*" class="upload-input">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    
+            </div>
+    
+            <div class="dotted-line"></div>
+    
+            <div class="Row1">
+    
+                <div class="grid-row">
+                    <div class="grid-item">
+                        <label for="correspondence_address" class="address-label">Correspondence Address:</label>
+                    <textarea id="correspondence_address" name="correspondence_address" class="address-input"></textarea>
+    
+                    </div>
+                    <div class="grid-item">
+                        <label for="permanent_address" class="address-label">Permanent Address:</label>
+                        <textarea id="permanent_address" name="permanent_address" rows="4" cols="30" class="address-input"></textarea>
+                    </div>
+                </div>
+            
+            </div>
+    
+            <div class="dotted-line"></div>
+    
+            <div class="Row1">
+                
+                
+                <div class="grid-container1">
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            
+                            <input type="text" id="mobile_number" name="mobile_number" placeholder="Mobile Number *">
+                        </div>
+                        <div class="grid-item1">
+                       
+                            <input type="text" id="email" name="email" placeholder="Email">
+    
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                       
+                            <input type="text" id="alternate_mobile_number" name="alternate_mobile_number" placeholder="Alternate Mobile Number">
+                        </div>
+                        <div class="grid-item1">
+                         
+                            
+                            <input type="text" id="alternate_email" name="alternate_email" placeholder="Alternate Email Number">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <button type="submit" class="save">SAVE & NEXT</button>
+    
+        </form>
+    
+    </div>
+    <script>
+        // Function to fetch user's email from the session and update the HTML
+        function fetchUserEmail() {
+            // Fetch user's email from the server
+            fetch('fetch_user_email.php')
+                .then(response => response.json())
+                .then(data => {
+                    // Get the element to display the user's email
+                    var userEmailElement = document.getElementById('userEmail');
+    
+                    // Update the HTML content with the user's email
+                    if (data.email !== 'Guest') {
+                        userEmailElement.textContent = 'Welcome, ' + data.email;
+                    } else {
+                        userEmailElement.textContent = 'Welcome, guest';
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    
+        // Call the function when the page loads
+        fetchUserEmail();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            background-image: url(./iitp.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .login-box {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-gap: 10px;
+        }
+
+        .grid-row {
+            display: flex;
+        }
+
+        .grid-item {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 10px;
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #captcha {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .captcha-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .note {
+            margin: 5px;
+        }
+
+        .button-container {
+            display: flex;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .button1 {
+            background-color: green;
+            margin: 10px;
+        }
+
+        .button2 {
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="first-div">
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Indian_Institute_of_Technology%2C_Patna.svg/330px-Indian_Institute_of_Technology%2C_Patna.svg.png"
+             style="padding-top: 5px; height: 120px; float: left;">
+
+        <h1>INDIAN INSTITUTE OF TECHNOLOGY PATNA</h1>
+        <h1>भारतीय प्रौद्योगिकी संस्थान पटना</h1>
+
+        <div class="login-box">
+            <h2>CREATE YOUR PROFILE</h2>
+            <form action="connect.php" method="post" onsubmit="return validateCaptcha()">
+                <div class="grid-container">
+                    <div class="grid-row">
+                        <div class="grid-item">
+                            <input type="text" id="firstname" name="firstname" placeholder="First Name">
+                        </div>
+                        <div class="grid-item">
+                            <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item">
+                            <input type="text" id="email" name="email" placeholder="Your Email">
+                        </div>
+                        <div class="grid-item">
+                            <select id="dropdown" name="category">
+                                <option value="general">General</option>
+                                <option value="obc">OBC</option>
+                                <option value="sc">SC</option>
+                                <option value="st">ST</option>
+                                <option value="pwd">PWD</option>
+                                <option value="ews">EWS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item">
+                            <input type="text" id="password" name="password" placeholder=" Create New Password">
+                        </div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item">
+                            <div id="captcha"></div>
+                            <input type="text" id="captchaInput" name="captcha" class="captcha-input"
+                                   placeholder="Enter CAPTCHA">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="note" style="color: red;">Note: </h3>
+                        <h4 class="note">1. Applicant should kindly check their email for activation link to access
+                            the
+                            portal.</h4>
+                        <h4 class="note">2. Please check SPAM folder also, in case activation link is not received
+                            in
+                            INBOX.</h4>
+                        <h4 class="note">3. Applicant applying for more than one position/ department should use
+                            different email id for each application.</h4>
+                    </div>
+
+                    <div class="button-container">
+                        <button class="button1">Register</button>
+                        <a href="./login-page.html"><button type="button" class="button2">Back to Login Page</button></a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to generate a random CAPTCHA string
+    function generateCaptcha() {
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var captcha = '';
+        for (var i = 0; i < 6; i++) {
+            captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return captcha;
+    }
+
+    // Function to display the CAPTCHA on the webpage
+    function displayCaptcha() {
+        var captcha = generateCaptcha();
+        document.getElementById('captcha').textContent = captcha;
+        // Store the generated CAPTCHA for validation
+        sessionStorage.setItem('captcha', captcha);
+    }
+
+    // Function to validate the user input against the CAPTCHA
+    function validateCaptcha() {
+        var userInput = document.getElementById('captchaInput').value;
+        var captcha = sessionStorage.getItem('captcha');
+        if (userInput === captcha) {
+            // CAPTCHA input is correct
+            return true;
+        } else {
+            // CAPTCHA input is incorrect
+            alert('CAPTCHA is incorrect. Please try again.');
+            return false;
+        }
+    }
+
+    // Display the CAPTCHA when the page loads
+    displayCaptcha();
+</script>
+</body>
+</html>

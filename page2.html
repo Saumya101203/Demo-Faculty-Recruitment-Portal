@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <style>
+        /* Your CSS styles here */
+        body{
+            background-image: url(./iitp.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: white;
+        }
+        .first-row{
+            padding:0px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .button1{
+            margin:5px;
+            float: right;
+        }
+        .Row{
+            width: 90%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .Row1{
+            width: 90%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            padding:20px;
+        }
+        .dotted-line {
+            border-bottom: 1px dotted #000; 
+            width: 100%;
+        }
+        .grid-container1 {
+            display: grid;
+            grid-gap: 10px;
+        }
+        .grid-row1 {
+            display: flex;
+        }
+        .grid-item1 {
+            flex: 1;
+            margin-right: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="date"] {
+            width: 50%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .save{
+            background-color: rgb(0, 255, 170);
+            border-width: 0px;
+            height: 40px;
+            margin-top: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            float: right;
+        }
+        .save:hover{
+            background-color: green;
+        }
+        .back{
+            background-color: rgb(0, 255, 170);
+            border-width: 0px;
+            height: 40px;
+            margin-top: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            float: left;
+        }
+        .back:hover{
+            background-color: green;   
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Indian_Institute_of_Technology%2C_Patna.svg/330px-Indian_Institute_of_Technology%2C_Patna.svg.png" style="padding-top: 5px; height: 120px; float: left;">
+        <h1>INDIAN INSTITUTE OF TECHNOLOGY PATNA</h1>
+        <h1>भारतीय प्रौद्योगिकी संस्थान पटना</h1>
+        <div class="Row1">
+            <div class="first-row">
+                <a href="./login-page.html">
+                    <button class="button1">Logout</button>
+                </a>
+            </div>
+            </div>
+        <div class="dotted-line"></div>
+        <form action="./page2.php" method="post">
+            <div class="Row1">
+                <p style="text-align: center; font-size: large;">EDUCATIONAL QUALIFICATIONS : </p>
+                <P style="text-align: left;">Details of PhD:</P>
+                <div class="grid-container1">
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <input type="text" name="university" placeholder="University/Institute">
+                        </div>
+                        <div class="grid-item1">
+                            <input type="text" name="department" placeholder="Department">
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <input type="text" name="supervisor" placeholder="Name of PhD Supervisor">
+                        </div>
+                        <div class="grid-item1">
+                            <input type="text" name="year_of_joining_phd" placeholder="Year of Joining">   
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <label>Date of Thesis Defence</label>
+                            <input type="date" name="date_of_thesis_defence">
+                        </div>
+                        <div class="grid-item1">
+                            <label for="">Date of Award</label>
+                            <input type="date" name="date_of_award">
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <input style='float: left; margin-left: 150px; width: 25%;' type="text" name="thesis_name" placeholder="Name of PhD Thesis">
+                        </div> 
+                    </div>
+                </div> 
+            </div>
+            <div class="dotted-line"></div>
+            <div class="Row1">
+                <P style="text-align: left;">Academic Details - M. Tech./ M.E./ PG Details</P>
+                <div class="grid-container1">
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <input type="text" name="degree_certificate" placeholder="Degree/Certificate">
+                        </div>
+                        <div class="grid-item1">
+                            <input type="text" name="university_institute" placeholder="University/Institute">
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <input type="text" name="branch_stream" placeholder="Branch/Stream">
+                        </div>
+                        <div class="grid-item1">
+                            <input type="text" name="year_of_joining_academic" placeholder="Year of Joining">   
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <input type="text" name="year_of_completion" placeholder="Year of Completion">
+                        </div>
+                        <div class="grid-item1">
+                            <input type="text" name="duration" placeholder="Duration (in years)">   
+                        </div>
+                    </div>
+                    <div class="grid-row1">
+                        <div class="grid-item1">
+                            <input type="text" name="percentage_cgpa" placeholder="Percentage/ CGPA">
+                        </div>
+                        <div class="grid-item1">
+                            <input type="text" name="division_class" placeholder="Division/Class">   
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="dotted-line"></div>
+            <div class="Row1">
+                <P style="text-align: left;">Academic Details - School *</P>
+                <table style="width: 100%;">
+                    <tr>
+                        <th>Exam Type</th>
+                        <th>School</th>
+                        <th>Year of Passing</th>
+                        <th>Percentage/Grade</th>
+                        <th>Division/Class</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="school[0][exam_type]" placeholder="10th/12th/HSC/Diploma"></td>
+                        <td><input type="text" name="school[0][school_name]" placeholder="School"></td>
+                        <td><input type="text" name="school[0][year_of_passing]" placeholder="Year of Passing"></td>
+                        <td><input type="text" name="school[0][percentage_grade]" placeholder="Percentage/ Grade"></td>
+                        <td><input type="text" name="school[0][division_class_school]" placeholder="Division/Class"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="school[1][exam_type]" placeholder="10th/12th/HSC/Diploma"></td>
+                        <td><input type="text" name="school[1][school_name]" placeholder="School"></td>
+                        <td><input type="text" name="school[1][year_of_passing]" placeholder="Year of Passing"></td>
+                        <td><input type="text" name="school[1][percentage_grade]" placeholder="Percentage/ Grade"></td>
+                        <td><input type="text" name="school[1][division_class_school]" placeholder="Division/Class"></td>
+                    </tr>
+                </table>
+                
+                </table>
+            </div>
+            </div>
+            <div class="dotted-line"></div>
+            <div class="Row1">
+                <P style="text-align: left;">Additional Educational Qualification (If any)</P>
+                <table style="width: 100%;">
+                    <tr>
+                        <th>Degree/Certificate</th>
+                        <th>University/Institute</th>
+                        <th>Branch/Stream</th>
+                        <th>Year of Joining</th>
+                        <th>Year of Completion</th>
+                        <th>Duration (in years)</th>
+                        <th>Percentage/CGPA</th>
+                        <th>Division/Class</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="degree_certificate_additional[0]" placeholder="Degree/Certificate"></td>
+                        <td><input type="text" name="university_institute_additional[0]" placeholder="University/Institute"></td>
+                        <td><input type="text" name="branch_stream_additional[0]" placeholder="Branch/Stream"></td>
+                        <td><input type="text" name="year_of_joining_additional[0]" placeholder="Year of Joining"></td>
+                        <td><input type="text" name="year_of_completion_additional[0]" placeholder="Year of Completion"></td>
+                        <td><input type="text" name="duration_additional[0]" placeholder="Duration (in years)"></td>
+                        <td><input type="text" name="percentage_cgpa_additional[0]" placeholder="Percentage/ CGPA"></td>
+                        <td><input type="text" name="division_class_additional[0]" placeholder="Division/Class"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="degree_certificate_additional[1]" placeholder="Degree/Certificate"></td>
+                        <td><input type="text" name="university_institute_additional[1]" placeholder="University/Institute"></td>
+                        <td><input type="text" name="branch_stream_additional[1]" placeholder="Branch/Stream"></td>
+                        <td><input type="text" name="year_of_joining_additional[1]" placeholder="Year of Joining"></td>
+                        <td><input type="text" name="year_of_completion_additional[1]" placeholder="Year of Completion"></td>
+                        <td><input type="text" name="duration_additional[1]" placeholder="Duration (in years)"></td>
+                        <td><input type="text" name="percentage_cgpa_additional[1]" placeholder="Percentage/ CGPA"></td>
+                        <td><input type="text" name="division_class_additional[1]" placeholder="Division/Class"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="degree_certificate_additional[2]" placeholder="Degree/Certificate"></td>
+                        <td><input type="text" name="university_institute_additional[2]" placeholder="University/Institute"></td>
+                        <td><input type="text" name="branch_stream_additional[2]" placeholder="Branch/Stream"></td>
+                        <td><input type="text" name="year_of_joining_additional[2]" placeholder="Year of Joining"></td>
+                        <td><input type="text" name="year_of_completion_additional[2]" placeholder="Year of Completion"></td>
+                        <td><input type="text" name="duration_additional[2]" placeholder="Duration (in years)"></td>
+                        <td><input type="text" name="percentage_cgpa_additional[2]" placeholder="Percentage/ CGPA"></td>
+                        <td><input type="text" name="division_class_additional[2]" placeholder="Division/Class"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="degree_certificate_additional[3]" placeholder="Degree/Certificate"></td>
+                        <td><input type="text" name="university_institute_additional[3]" placeholder="University/Institute"></td>
+                        <td><input type="text" name="branch_stream_additional[3]" placeholder="Branch/Stream"></td>
+                        <td><input type="text" name="year_of_joining_additional[3]" placeholder="Year of Joining"></td>
+                        <td><input type="text" name="year_of_completion_additional[3]" placeholder="Year of Completion"></td>
+                        <td><input type="text" name="duration_additional[3]" placeholder="Duration (in years)"></td>
+                        <td><input type="text" name="percentage_cgpa_additional[3]" placeholder="Percentage/ CGPA"></td>
+                        <td><input type="text" name="division_class_additional[3]" placeholder="Division/Class"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="degree_certificate_additional[4]" placeholder="Degree/Certificate"></td>
+                        <td><input type="text" name="university_institute_additional[4]" placeholder="University/Institute"></td>
+                        <td><input type="text" name="branch_stream_additional[4]" placeholder="Branch/Stream"></td>
+                        <td><input type="text" name="year_of_joining_additional[4]" placeholder="Year of Joining"></td>
+                        <td><input type="text" name="year_of_completion_additional[4]" placeholder="Year of Completion"></td>
+                        <td><input type="text" name="duration_additional[4]" placeholder="Duration (in years)"></td>
+                        <td><input type="text" name="percentage_cgpa_additional[4]" placeholder="Percentage/ CGPA"></td>
+                        <td><input type="text" name="division_class_additional[4]" placeholder="Division/Class"></td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+            <div class="dotted-line"></div>
+            <button type="submit" class="back">BACK</button>
+            <button type="submit" class="save">SAVE & NEXT</button>
+        </form>
+    </div>
+    <script>
+        // Function to fetch user's email from the session or the server if not available
+        function fetchUserEmail() {
+            // Check if email is already stored in session storage
+            var userEmail = sessionStorage.getItem('userEmail');
+            if (userEmail) {
+                // If email is available in session storage, return it
+                return Promise.resolve({ email: userEmail });
+            } else {
+                // If email is not available in session storage, fetch it from the server
+                return fetch('fetch_user_email.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.email) {
+                            // Store email in session storage for future use
+                            sessionStorage.setItem('userEmail', data.email);
+                        }
+                        return data;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching user email:', error);
+                        return { email: null }; // Return null if an error occurs
+                    });
+            }
+        }
+    
+        // Function to submit form data
+        function submitForm(email) {
+            // If email is null, show an error message
+            if (!email) {
+                alert('Email is required!');
+                return;
+            }
+    
+            // Serialize form data
+            var formData = new FormData(document.querySelector('form'));
+    
+            // Append user's email to the form data
+            formData.append('email', email);
+    
+            // Send a POST request to the PHP script with the form data
+            fetch('./page2.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to page3.html if data is successfully saved
+                    window.location.href = './page3.html';
+                } else {
+                    // Display error message if data submission fails
+                    console.error('Error:', response.statusText);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        function redirectToPage1() {
+        window.location.href = './page1.html';
+    }
+
+        // Call fetchUserEmail to get the user's email and then submitForm when the document is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchUserEmail()
+                .then(data => {
+                    if (data && data.email) {
+                        // If email is fetched successfully, attach event listener to submit button
+                        var submitButton = document.querySelector('.save');
+                        submitButton.addEventListener('click', function(event) {
+                            // Prevent default form submission
+                            event.preventDefault();
+                            // Submit form data
+                            submitForm(data.email);
+                        });
+    
+                        // Attach event listener to back button
+                        var backButton = document.querySelector('.back');
+                        backButton.addEventListener('click', function(event) {
+                            event.preventDefault(); // Prevent default form submission
+                            redirectToPage1(); // Redirect to ./page1.html
+                        });
+                    } else {
+                        // Log an error if email is not found
+                        console.error('Error: User email not found');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+    
+</body>
+</html>

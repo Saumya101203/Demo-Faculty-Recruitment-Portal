@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(./iitp.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 50px;
+        }
+
+        .first-row {
+            padding: 3px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .Row1 {
+            width: 90%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dotted-line {
+            border-bottom: 1px dotted #000;
+            width: 100%;
+        }
+
+        .Row2,
+        .Row3,
+        .Row4 {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="file"],
+        input[type="text"] {
+            width: calc(33.33% - 10px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px; /* Adjust the space between buttons */
+            margin-bottom: 10px; /* Add some space below each button group */
+        }
+
+        .save{
+    background-color: rgb(0, 255, 170);
+    border-width: 0px;
+    height: 40px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    float: right;
+}
+.save:hover{
+    background-color: green;
+}
+.back{
+    background-color: rgb(0, 255, 170);
+    border-width: 0px;
+    height: 40px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    float: left;
+}
+.back:hover{
+    background-color: green;   
+}
+
+        .grid-container {
+            display: grid;
+            grid-gap: 10px; /* Adjust the space between grid items */
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .grid-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-item {
+            flex: 1; /* Make grid items evenly distributed */
+            padding: 5px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .grid-item input[type="text"] {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Indian_Institute_of_Technology%2C_Patna.svg/330px-Indian_Institute_of_Technology%2C_Patna.svg.png" style="padding-top: 5px; height: 100px; float: left;">
+        <h1>INDIAN INSTITUTE OF TECHNOLOGY PATNA</h1>
+        <h1>भारतीय प्रौद्योगिकी संस्थान पटना</h1>
+
+        <div class="Row1">
+            <div class="first-row">
+                <a href="./login-page.html">
+                    <button class="button1">Logout</button>
+                </a>
+            </div>
+            <div class="dotted-line"></div>
+            <form action="./page8.php" method="post" enctype="multipart/form-data">
+            <div class="Row3">
+                <p>Check List of the documents attached with the online application (Documents should be uploaded in PDF format only):</p>
+                <div class="button-container">
+                    <label for="upload1">Upload PHD Certificate:</label>
+                    <input type="file" id="upload1" name="phd_certificate" accept="PDF/*" class="upload-input">
+                    <label for="upload2">Upload PG Documents:</label>
+                    <input type="file" id="upload2" name="pg_documents" accept="PDF/*" class="upload-input">
+                    <label for="upload3">Upload UG Documents:</label>
+                    <input type="file" id="upload3" name="ug_documents" accept="PDF/*" class="upload-input">
+                </div>
+                <div class="button-container">
+                    <label for="upload4">Upload 12th/HSC/Diploma Documents:</label>
+                    <input type="file" id="upload4" name="hsc_diploma_documents" accept="PDF/*" class="upload-input">
+                    <label for="upload5">Upload 10th/SSC Documents:</label>
+                    <input type="file" id="upload5" name="ssc_documents" accept="PDF/*" class="upload-input">
+                    <label for="upload6">Upload Pay Slip:</label>
+                    <input type="file" id="upload6" name="pay_slip" accept="PDF/*" class="upload-input">
+                </div>
+                <label for="upload7">Upload NOC or Undertaking:</label>
+                <input type="file" id="upload7" name="noc_undertaking" accept="PDF/*" class="upload-input">
+                <label for="upload8">Upload Post PHD Experience Certificate/All Experience Certificates/ Last Pay Slip:</label>
+                <input type="file" id="upload8" name="post_phd_experience_certificate" accept="PDF/*" class="upload-input">
+                <label for="upload9">Upload any other relevant document in a single PDF:</label>
+                <input type="file" id="upload9" name="other_relevant_document" accept="PDF/*" class="upload-input">
+            </div>
+            <div class="Row4">
+                <p>Referees</p>
+                <div class="grid-container">
+                    <div class="grid-row">
+                        <div class="grid-item">Name</div>
+                        <div class="grid-item">Position</div>
+                        <div class="grid-item">Association with Referee</div>
+                        <div class="grid-item">Institution/Organization</div>
+                        <div class="grid-item">E-mail</div>
+                        <div class="grid-item">Contact No.</div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item"><input type="text" name="name[]"></div>
+                        <div class="grid-item"><input type="text" name="position[]"></div>
+                        <div class="grid-item"><input type="text" name="association[]"></div>
+                        <div class="grid-item"><input type="text" name="institution[]"></div>
+                        <div class="grid-item"><input type="text" name="email[]"></div>
+                        <div class="grid-item"><input type="text" name="contact_no[]"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item"><input type="text" name="name[]"></div>
+                        <div class="grid-item"><input type="text" name="position[]"></div>
+                        <div class="grid-item"><input type="text" name="association[]"></div>
+                        <div class="grid-item"><input type="text" name="institution[]"></div>
+                        <div class="grid-item"><input type="text" name="email[]"></div>
+                        <div class="grid-item"><input type="text" name="contact_no[]"></div>
+                    </div>
+                    <div class="grid-row">
+                        <div class="grid-item"><input type="text" name="name[]"></div>
+                        <div class="grid-item"><input type="text" name="position[]"></div>
+                        <div class="grid-item"><input type="text" name="association[]"></div>
+                        <div class="grid-item"><input type="text" name="institution[]"></div>
+                        <div class="grid-item"><input type="text" name="email[]"></div>
+                        <div class="grid-item"><input type="text" name="contact_no[]"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="dotted-line"></div>
+        <button type="submit" class="back">BACK</button>
+        <button type="submit" class="save">SAVE & NEXT</button>
+    </form>
+</div>
+
+<script>
+    // Function to fetch user's email from the session or the server if not available
+    function fetchUserEmail() {
+        // Check if email is already stored in session storage
+        var userEmail = sessionStorage.getItem('userEmail');
+        if (userEmail) {
+            // If email is available in session storage, return it
+            return Promise.resolve({ email: userEmail });
+        } else {
+            // If email is not available in session storage, fetch it from the server
+            return fetch('fetch_user_email.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.email) {
+                        // Store email in session storage for future use
+                        sessionStorage.setItem('userEmail', data.email);
+                    }
+                    return data;
+                })
+                .catch(error => {
+                    console.error('Error fetching user email:', error);
+                    return { email: null }; // Return null if an error occurs
+                });
+        }
+    }
+
+    // Function to submit form data
+    function submitForm(email) {
+        // If email is null, show an error message
+        if (!email) {
+            alert('Email is required!');
+            return;
+        }
+
+        // Serialize form data
+        var formData = new FormData(document.querySelector('form'));
+
+        // Append user's email to the form data
+        formData.append('email', email);
+
+        // Send a POST request to the PHP script with the form data
+        fetch('./page8.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                // Redirect to page3.html if data is successfully saved
+                window.location.href = './page9.html';
+            } else {
+                // Display error message if data submission fails
+                console.error('Error:', response.statusText);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    function redirectToPage2() {
+    window.location.href = './page7.html';
+}
+
+    // Call fetchUserEmail to get the user's email and then submitForm when the document is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        fetchUserEmail()
+            .then(data => {
+                if (data && data.email) {
+                    // If email is fetched successfully, attach event listener to submit button
+                    var submitButton = document.querySelector('.save');
+                    submitButton.addEventListener('click', function(event) {
+                        // Prevent default form submission
+                        event.preventDefault();
+                        // Submit form data
+                        submitForm(data.email);
+                    });
+
+                    // Attach event listener to back button
+                    var backButton = document.querySelector('.back');
+                    backButton.addEventListener('click', function(event) {
+                        event.preventDefault(); // Prevent default form submission
+                        redirectToPage2(); // Redirect to ./page1.html
+                    });
+                } else {
+                    // Log an error if email is not found
+                    console.error('Error: User email not found');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+body{
+        background-image: url(./iitp.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    .first-row{
+       
+        padding: 3px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .Row1{
+        width: 90%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        text-align: center;
+        padding:20px;
+    }
+
+    .dotted-line {
+    border-bottom: 1px dotted #000; 
+    width: 100%;
+    }
+
+    .grid-container1 {
+    display: grid;
+    
+    grid-gap: 10px;
+    }
+
+    .grid-row1 {
+        display: flex;
+    }
+
+    .grid-item1 {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        width: 50%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .grid-container {
+    display: grid;
+    grid-gap: 0px;
+    padding: 10px; 
+    border-radius: 10px;
+}
+
+.grid-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center; 
+    
+}
+
+.save{
+    background-color: rgb(0, 255, 170);
+    border-width: 0px;
+    height: 40px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    float: right;
+}
+.save:hover{
+    background-color: green;
+}
+.back{
+    background-color: rgb(0, 255, 170);
+    border-width: 0px;
+    height: 40px;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    float: left;
+}
+.back:hover{
+    background-color: green;   
+}
+
+.button-container {
+        display: flex;
+        gap: 10px; /* Adjust the space between buttons */
+    }
+
+    /* Style for the round buttons */
+    .round-button {
+        width: 60px;
+        height: 30px;
+        border-radius: 15px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        cursor: pointer;
+    }
+
+    /* Style for the "Yes" button */
+    .yes-button {
+        color: #000;
+    }
+
+    /* Style for the "No" button */
+    .no-button {
+        color: #000;
+    }
+
+    /* Style for the checked state */
+    .yes-button.checked,
+    .no-button.checked {
+        background-color: #ccc;
+    }
+
+    /* Style for the green background when toggled */
+    .green-bg {
+        background-color: green !important;
+    }
+</style>
+
+<body>
+
+    <div>
+
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Indian_Institute_of_Technology%2C_Patna.svg/330px-Indian_Institute_of_Technology%2C_Patna.svg.png" style="padding-top: 5px; height: 100px; float: left;">
+
+        <h1 style="font-size: 50px; color: white;" >INDIAN INSTITUTE OF TECHNOLOGY PATNA</h1>
+        <h1 style="font-size: 50px; color: white;">भारतीय प्रौद्योगिकी संस्थान पटना</h1>
+
+        <div class="Row1">
+        
+            <div class="first-row">
+                
+                <a href="./login-page.html">
+                    <button class="button1">Logout</button>
+                </a>
+                
+            </div>
+            
+
+            <div class="dotted-line"></div>
+            <form action="./page7.php" method="post"></form>
+            <div class="Row2">
+                <P style="text-align: left;"> Significant research contribution and future plans  </P>
+                <div class="grid-item"><input type="text" name="research_contribution_future_plans"></div>
+            </div>
+            <div class="Row3">
+                <P style="text-align: left;"> Significant teaching contribution and future plans  </P>
+                <div class="grid-item"><input type="text" name="teaching_contribution_future_plans"></div>
+            </div>
+            <div class="Row4">
+                <P style="text-align: left;"> Any other relevant information  </P>
+                <div class="grid-item"><input type="text" name="other_relevant_information"></div>
+            </div>
+            <div class="Row5">
+                <P style="text-align: left;"> Professional Service : Editorship/Reviewership  </P>
+                <div class="grid-item"><input type="text" name="professional_service_editorship_reviewership"></div>
+            </div>
+            <div class="Row6">
+                <P style="text-align: left;">  Detailed List of Journal Publications
+                    (Including Sr. No., Author's Names, Paper Title, Volume, Issue, Year, Page Nos., Impact Factor (if any), DOI, Status[Published/Accepted] )  </P>
+                    <div class="grid-item"><input type="text" name="journal_publications	"></div>
+            </div>
+            <div class="Row7">
+                <P style="text-align: left;">  Detailed List of Conference Publications</P>
+                <div class="grid-item"><input type="text" name="conference_publications"></div>
+            </div>
+            <div class="dotted-line"></div>
+            <button type="submit" class="back">BACK</button>
+            <button type="submit" class="save">SAVE & NEXT</button>
+        </form>
+    </div>
+    
+    <script>
+        // Function to fetch user's email from the session or the server if not available
+        function fetchUserEmail() {
+            // Check if email is already stored in session storage
+            var userEmail = sessionStorage.getItem('userEmail');
+            if (userEmail) {
+                // If email is available in session storage, return it
+                return Promise.resolve({ email: userEmail });
+            } else {
+                // If email is not available in session storage, fetch it from the server
+                return fetch('fetch_user_email.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.email) {
+                            // Store email in session storage for future use
+                            sessionStorage.setItem('userEmail', data.email);
+                        }
+                        return data;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching user email:', error);
+                        return { email: null }; // Return null if an error occurs
+                    });
+            }
+        }
+    
+        // Function to submit form data
+        function submitForm(email) {
+            // If email is null, show an error message
+            if (!email) {
+                alert('Email is required!');
+                return;
+            }
+    
+            // Serialize form data
+            var formData = new FormData(document.querySelector('form'));
+    
+            // Append user's email to the form data
+            formData.append('email', email);
+    
+            // Send a POST request to the PHP script with the form data
+            fetch('./page7.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to page3.html if data is successfully saved
+                    window.location.href = './page8.html';
+                } else {
+                    // Display error message if data submission fails
+                    console.error('Error:', response.statusText);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        function redirectToPage2() {
+        window.location.href = './page6.html';
+    }
+    
+        // Call fetchUserEmail to get the user's email and then submitForm when the document is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchUserEmail()
+                .then(data => {
+                    if (data && data.email) {
+                        // If email is fetched successfully, attach event listener to submit button
+                        var submitButton = document.querySelector('.save');
+                        submitButton.addEventListener('click', function(event) {
+                            // Prevent default form submission
+                            event.preventDefault();
+                            // Submit form data
+                            submitForm(data.email);
+                        });
+    
+                        // Attach event listener to back button
+                        var backButton = document.querySelector('.back');
+                        backButton.addEventListener('click', function(event) {
+                            event.preventDefault(); // Prevent default form submission
+                            redirectToPage2(); // Redirect to ./page1.html
+                        });
+                    } else {
+                        // Log an error if email is not found
+                        console.error('Error: User email not found');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+    
+    </body>
+    </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url(./iitp.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 50px;
+        }
+
+        .first-row {
+            padding: 3px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .Row1 {
+            width: 90%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            padding:20px;
+        }
+
+        .dotted-line {
+            border-bottom: 1px dotted #000;
+            width: 100%;
+        }
+
+        .save {
+            background-color: rgb(0, 255, 170);
+            border-width: 0px;
+            height: 40px;
+            margin-top: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            float: right;
+        }
+        .save:hover {
+            background-color: green;
+        }
+        .back {
+            background-color: rgb(0, 255, 170);
+            border-width: 0px;
+            height: 40px;
+            margin-top: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            float: left;
+        }
+        .back:hover {
+            background-color: green;   
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .checkbox-text {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Indian_Institute_of_Technology%2C_Patna.svg/330px-Indian_Institute_of_Technology%2C_Patna.svg.png" style="padding-top: 5px; height: 100px; float: left;">
+    <h1>INDIAN INSTITUTE OF TECHNOLOGY PATNA</h1>
+    <h1>भारतीय प्रौद्योगिकी संस्थान पटना</h1>
+
+    <div class="Row1">
+        <div class="first-row">
+            <a href="./login-page.html">
+                <button class="button1">Logout</button>
+            </a>
+        </div>
+        <div class="dotted-line"></div>
+        <div class="Row2">
+            <p>Final Declaration</p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="declaration">
+                <label class="checkbox-text" for="declaration">I hereby declare that I have carefully read and understood the instructions and particulars mentioned in the advertisement and this application form. I further declare that all the entries along with the attachments uploaded in this form are true to the best of my knowledge and belief.</label>
+            </div>
+            <form action="./page9.php" method="POST">
+                <input type="text" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="back">BACK</button>
+                <button type="submit" class="save">SAVE & SUBMIT</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
