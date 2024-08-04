@@ -73,6 +73,15 @@
             margin-left: 10px;
         }
     </style>
+    <script>
+        function validateForm(event) {
+            const checkbox = document.getElementById('declaration');
+            if (!checkbox.checked) {
+                event.preventDefault();
+                alert('Please check the declaration checkbox before submitting.');
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -94,9 +103,9 @@
                 <input type="checkbox" id="declaration">
                 <label class="checkbox-text" for="declaration">I hereby declare that I have carefully read and understood the instructions and particulars mentioned in the advertisement and this application form. I further declare that all the entries along with the attachments uploaded in this form are true to the best of my knowledge and belief.</label>
             </div>
-            <form action="./page9.php" method="POST">
+            <form action="./page9.php" method="POST" onsubmit="validateForm(event)">
                 <input type="text" name="email" placeholder="Enter your email" required>
-                <button type="submit" class="back">BACK</button>
+                <button type="button" class="back" onclick="history.back()">BACK</button>
                 <button type="submit" class="save">SAVE & SUBMIT</button>
             </form>
         </div>
